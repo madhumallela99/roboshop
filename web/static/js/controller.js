@@ -560,3 +560,13 @@
     });
 
 }) (window.angular);
+/* ---- FORCE CATEGORY LOAD FIX ---- */
+setTimeout(function () {
+  var scope = angular.element(document.body).scope();
+  if (scope && scope.loadCategories) {
+    console.log("Force loading categories");
+    scope.loadCategories();
+    scope.$applyAsync();
+  }
+}, 2000);
+

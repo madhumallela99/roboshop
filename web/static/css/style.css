@@ -39,8 +39,11 @@ h3 a:visited {
 
 .category {
     font-size: 14pt;
-    cursor: context-menu;
+    cursor: pointer;
     text-transform: capitalize;
+}
+.category, .category * {
+    pointer-events: auto;
 }
 
 .carttotal {
@@ -191,5 +194,33 @@ div.splash {
     background-repeat: no-repeat;
     padding: 5px;
     margin: 0px;
+}
+/* Fix left menu click issue */
+#left-menu {
+    position: relative;
+    z-index: 1000;
+}
+
+#content {
+    margin-left: 260px;
+}
+/* ---- FINAL FIX FOR CATEGORY CLICK ISSUE ---- */
+
+.row {
+    width: 100%;
+}
+
+.nav {
+    width: 220px;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+.main {
+    margin-left: 240px;
+    width: auto;
+    position: relative;
+    z-index: 1;
 }
 
